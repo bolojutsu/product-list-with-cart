@@ -1,0 +1,356 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+.background {
+  background-color: hsl(36, 56%, 96%);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+  padding: 1rem;
+}
+
+.dessert-card {
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1);
+  margin: 1rem;
+  width: 100%;
+  max-width: 250px;
+  display: inline-flex;
+  flex-direction: column;
+  font-size: 0.875rem;
+  position: relative;
+}
+
+.dessert-image {
+  border-radius: 10px;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.dessert-image.in-cart {
+  border: 3px solid hsl(14, 83%, 43%);
+  box-sizing: border-box;
+}
+
+.dessert-name {
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  margin: 0.5rem 0;
+}
+
+.dessert-category {
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
+  color: hsl(0, 0%, 48%);
+  padding-top: 20px;
+}
+
+.dessert-price {
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  color: red;
+}
+
+.add-to-cart-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  position: absolute;
+  bottom: 5.7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  max-width: 130px;
+  height: 2.5rem;
+  background-color: white;
+  border: 1px solid hsl(0, 0%, 80%);
+  box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1);
+  border-radius: 15px;
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
+}
+
+.add-to-cart-button.added {
+  background-color: red;
+  color: white;
+  border: 1px solid #388e3c;
+  transition: background 0.3s;
+}
+
+.cart-counter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  position: absolute;
+  bottom: 5.7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  max-width: 150px;
+  height: 2.5rem;
+  background-color: hsl(14, 83%, 43%);
+  border: 1px solid hsl(0, 0%, 0%, 0.1);
+  border-radius: 20px;
+}
+
+.counter-btn {
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.counter-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.counter-qty {
+  color: white;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  font-weight: bold;
+  width: 1.5rem;
+  text-align: center;
+}
+
+.sidebar {
+  width: 100%;
+  max-width: 350px;
+
+  margin: 1rem;
+  background-color: white;
+  border-radius: 5px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  width: 100%;
+  color: hsl(14, 83%, 43%);
+  font-size: clamp(1rem, 3vw, 1.25rem);
+}
+
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem;
+}
+
+.empty-cart img {
+  max-width: 100%;
+  height: auto;
+}
+
+.items-in-cart {
+  margin: 0 0.5rem 0;
+  padding: 0.5rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.item {
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
+  color: hsl(0, 0%, 20%);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.delete-button {
+  border-radius: 50%;
+  border: 1px solid rgb(212, 211, 211);
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.delete-button img {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.item-background {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.quantity {
+  color: hsl(14, 83%, 43%);
+}
+
+.price {
+  color: hsl(0, 0%, 48%);
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+}
+
+.price p {
+  margin: 0;
+}
+
+.price-text {
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
+  padding-top: 2px;
+}
+
+.cost {
+  color: hsl(0, 1%, 31%);
+}
+
+hr {
+  border: 1px solid rgb(231, 231, 231);
+  width: 100%;
+}
+
+.sidebar-end-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.total-background {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.p-numeric {
+  font-weight: bold;
+  font-size: clamp(1rem, 3vw, 1.25rem);
+}
+
+.p-text {
+  color: hsl(0, 0%, 45%);
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+}
+
+.sidebar-end-text {
+  background-color: hsla(0, 2%, 77%, 0.1);
+  border-radius: 5px;
+  padding: 0.75rem;
+  width: 100%;
+  max-width: 250px;
+  text-align: center;
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
+}
+
+.sidebar-end-text img {
+  padding-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.confirm-order-button {
+  background-color: hsl(14, 72%, 47%);
+  color: white;
+  height: 2.5rem;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 20px;
+  border: none;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .background {
+    flex-direction: column; /* Stack main and sidebar vertically */
+    padding: 0.5rem;
+  }
+
+  .main {
+    padding: 0.5rem;
+  }
+
+  .dessert-card {
+    max-width: 100%; /* Full width for cards */
+    margin: 0.5rem auto;
+  }
+
+  .add-to-cart-button,
+  .cart-counter {
+    width: 80%;
+    bottom: 3rem;
+  }
+
+  .sidebar {
+    max-width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  .total-background {
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .background {
+    flex-direction: row; /* Keep row layout */
+    flex-wrap: wrap;
+  }
+
+  .dessert-card {
+    max-width: 45%; /* Two cards per row */
+  }
+
+  .sidebar {
+    max-width: 40%;
+  }
+
+  .add-to-cart-button,
+  .cart-counter {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .background {
+    flex-direction: row;
+    padding: 2rem;
+  }
+
+  .dessert-card {
+    max-width: 250px; /* Fixed width for cards */
+  }
+
+  .sidebar {
+    max-width: 350px;
+  }
+}
