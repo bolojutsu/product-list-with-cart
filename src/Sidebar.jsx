@@ -1,4 +1,4 @@
-import emptyCartImg from './assets/images/illustration-empty-cart.svg';
+import emptyCartImg from '/images/illustration-empty-cart.svg';
 
 function Sidebar({ cart, removeFromCart }) {
     const isEmpty = cart.count === 0;
