@@ -48,7 +48,7 @@ const Card = ({ dessert, addToCart, removeFromCart, cart }) => {
                     ${dessert.price.toFixed(2)}
                 </p>
                 <button className="add-to-cart-button" onClick={() => addToCart(dessert)}>
-                    <img src="./src/assets/images/icon-add-to-cart.svg" className="cart-image" alt="" />
+                    <img src="/images/icon-add-to-cart.svg" className="cart-image" alt="" />
                     <p>Add to Cart</p>
                 </button>
             </div>
