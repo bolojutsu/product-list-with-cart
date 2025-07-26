@@ -1,6 +1,6 @@
 import emptyCartImg from '/images/illustration-empty-cart.svg';
 
-function Sidebar({ cart, removeFromCart }) {
+function Sidebar({ cart, removeFromCart, onConfirmOrder }) {
     const isEmpty = cart.count === 0;
 
     let content;
@@ -41,7 +41,7 @@ function Sidebar({ cart, removeFromCart }) {
                         <p className="p-numeric">${cart.total}</p>
                     </div>
                     <div className="sidebar-end-text"><img src="src/assets/images/icon-carbon-neutral.svg" alt="" />This is a <strong>carbon-natural</strong> delivery</div>
-                    <button className="confirm-order-button">Confirm Order</button>
+                    <button className="confirm-order-button" onClick={onConfirmOrder}>Confirm Order</button>
                 </div>
             </>
         );

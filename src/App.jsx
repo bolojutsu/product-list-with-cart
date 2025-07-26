@@ -2,9 +2,11 @@ import { useState } from 'react';
 import List from './CardList.jsx';
 import Header from './Header.jsx';
 import Sidebar from './Sidebar.jsx';
+import ConfirmOrder from './confirmOrder.jsx';
 
 function App() {
   const [cart, setCart] = useState({ items: {}, total: 0, count: 0 });
+  const [showOrderConfirmation, setShowOrderConfirmation] = useState(false);
 
   const addToCart = (dessert) => {
     setCart((prevCart) => {
@@ -38,6 +40,15 @@ function App() {
     });
   };
 
+  const handleConfirmOrder = () => {
+    setShowOrderConfirmation(true);
+  };
+
+  const handleStartNewOrder = () => {
+    setCart({ items: {}, total: 0, count: 0 });
+    setShowOrderConfirmation(false);
+  };
+
   return (
     <>
       <div className="background">
@@ -45,8 +56,15 @@ function App() {
           <Header />
           <List addToCart={addToCart} removeFromCart={removeFromCart} cart={cart} />
         </div>
-        <Sidebar cart={cart} removeFromCart={removeFromCart} />
+        <Sidebar cart={cart} removeFromCart={removeFromCart} onConfirmOrder={handleConfirmOrder} />
       </div>
+      {showOrderConfirmation && (
+        <ConfirmOrder
+          cart={cart}
+          onClose={() => setShowOrderConfirmation(false)}
+          onStartNewOrder={handleStartNewOrder}
+        />
+      )}
     </>
   );
 }
