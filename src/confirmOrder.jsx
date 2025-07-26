@@ -42,7 +42,7 @@ function ConfirmOrder({ cart, onClose, onStartNewOrder }) {
                 </div>
 
                 <button className="start-new-order-button" onClick={onStartNewOrder}>
-                    Start New Order
+                    Check out
                 </button>
             </div>
         </div>

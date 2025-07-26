@@ -30,7 +30,7 @@ function Sidebar({ cart, removeFromCart, onConfirmOrder }) {
                                     ${(item.price * item.quantity).toFixed(2)}
                                 </div>
                             </div>
-                            <button className="delete-button" onClick={() => removeFromCart(item.name)}><img src="src/assets/images/icon-remove-item.svg" alt="" /></button>
+                            <button className="delete-button" onClick={() => removeFromCart(item.name)}><img src="/images/icon-remove-item.svg" alt="" /></button>
                         </div>
                         <hr />
                     </div>
@@ -40,7 +40,7 @@ function Sidebar({ cart, removeFromCart, onConfirmOrder }) {
                         <p className="p-text">Order Total</p>
                         <p className="p-numeric">${cart.total}</p>
                     </div>
-                    <div className="sidebar-end-text"><img src="src/assets/images/icon-carbon-neutral.svg" alt="" />This is a <strong>carbon-natural</strong> delivery</div>
+                    <div className="sidebar-end-text"><img src="/images/icon-carbon-neutral.svg" alt="" />This is a <strong>carbon-natural</strong> delivery</div>
                     <button className="confirm-order-button" onClick={onConfirmOrder}>Confirm Order</button>
                 </div>
             </>
